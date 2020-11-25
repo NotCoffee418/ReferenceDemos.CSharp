@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>gRPC</h1>
+    <h3>Checklist for adding new protos</h3>
+    <ul>
+        <li>Build action must be set to "Protobuf compiler"</li>
+        <li>gRPC Stub classes must define client / server / both acoording to the situation.</li>
+        <li>Make sure new services are defined in Startup.cs</li>
+        <li>Rebuild the project containing the protos.</li>
+    </ul>
+
+    <h3>Good to know</h3>
+    <p>
+        Some voodoo happens behind the scenes to generate the code your services inherit from.<br />
+        Make sure to rebuild shared if new or updated protos aren't showing up.
+    </p>
+    <p>
+        gRPC data types are not C# datatypes. See <a href="https://docs.microsoft.com/en-us/dotnet/architecture/grpc-for-wcf-developers/protobuf-data-types">here</a> for reference.
+    </p>
+</body>
+</html>

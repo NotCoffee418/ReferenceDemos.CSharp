@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcReferenceDemo.Shared";
+
+package teststream;
+
+service TestStreamer {
+	rpc DoAThing (ThingRequest) returns (stream ThingReply);
+}
+
+message ThingRequest {
+	int32 amount = 1;
+}
+
+message ThingReply {
+	int32 latest = 1;
+	double sqrt = 2;
+}
